@@ -1,0 +1,670 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Confirmación de Afiliación – Parque Salud</title>
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #f0f4f0;
+      font-family: 'DM Sans', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .email-wrapper {
+      background-color: #f0f4f0;
+      padding: 40px 16px;
+    }
+
+    .email-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    }
+
+    /* ── HEADER ── */
+    .header {
+      background: linear-gradient(135deg, #1a6e3c 0%, #2a9d5c 60%, #3ab86c 100%);
+      padding: 40px 40px 32px;
+      text-align: center;
+      position: relative;
+    }
+
+    .header-logo {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1.5px solid rgba(255,255,255,0.3);
+      border-radius: 12px;
+      padding: 10px 22px;
+      margin-bottom: 24px;
+    }
+
+    .header-logo span {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 20px;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+    }
+
+    .header-logo span em {
+      font-style: normal;
+      color: #a8f0c6;
+    }
+
+    .header-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      border-radius: 30px;
+      padding: 5px 16px;
+      margin-bottom: 18px;
+    }
+
+    .header-badge span {
+      font-size: 12px;
+      font-weight: 600;
+      color: #d4f7e4;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .header h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 28px;
+      color: #ffffff;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .header p.subtitle {
+      font-size: 14px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.5;
+    }
+
+    /* ── PROGRESS BAR ── */
+    .progress-section {
+      background: #f8fdf9;
+      border-bottom: 1px solid #e6f2eb;
+      padding: 20px 40px;
+    }
+
+    .progress-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #2a9d5c;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .progress-track {
+      background: #dceee3;
+      border-radius: 99px;
+      height: 8px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      width: 85%;
+      height: 100%;
+      background: linear-gradient(90deg, #2a9d5c, #3ab86c);
+      border-radius: 99px;
+    }
+
+    .progress-steps {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8px;
+    }
+
+    .progress-steps span {
+      font-size: 11px;
+      color: #7aab8a;
+    }
+
+    .progress-steps span.active {
+      color: #1a6e3c;
+      font-weight: 600;
+    }
+
+    /* ── BODY ── */
+    .body-content {
+      padding: 36px 40px;
+    }
+
+    .greeting {
+      font-size: 15px;
+      color: #2d3a2e;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .greeting strong {
+      font-size: 17px;
+      font-weight: 600;
+      color: #1a4a28;
+    }
+
+    .intro-text {
+      font-size: 14px;
+      color: #5a6e5c;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    /* ── SECTION CARD ── */
+    .card {
+      border: 1.5px solid #e2ede6;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .card-header {
+      background: #f4faf6;
+      border-bottom: 1px solid #e2ede6;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: #2a9d5c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .card-icon svg {
+      width: 16px;
+      height: 16px;
+      fill: none;
+      stroke: #fff;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .card-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #1a4a28;
+      letter-spacing: 0.2px;
+    }
+
+    .card-body {
+      padding: 18px 20px;
+    }
+
+    .card-body p {
+      font-size: 12px;
+      color: #4d6352;
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+
+    .card-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── LINK ROW ── */
+    .link-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px dashed #ddeee4;
+      text-decoration: none;
+    }
+
+    .link-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .link-row:first-child {
+      padding-top: 0;
+    }
+
+    .link-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #2a9d5c;
+      flex-shrink: 0;
+    }
+
+    .link-row a {
+      font-size: 13.5px;
+      color: #1a6e3c;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .link-row a:hover {
+      text-decoration: underline;
+    }
+
+    .link-tag {
+      margin-left: auto;
+      font-size: 11px;
+      background: #e6f4ec;
+      color: #2a7a4a;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 30px;
+      white-space: nowrap;
+    }
+
+    /* ── ALERT BOX ── */
+    .alert-box {
+      background: #fff8e6;
+      border: 1.5px solid #f5d97a;
+      border-radius: 10px;
+      padding: 14px 18px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .alert-box .alert-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+      line-height: 1.4;
+    }
+
+    .alert-box p {
+      font-size: 13px;
+      color: #7a5a00;
+      line-height: 1.6;
+    }
+
+    .alert-box p a {
+      color: #c47800;
+      font-weight: 600;
+    }
+
+    /* ── HIGHLIGHT BOX (traspaso) ── */
+    .highlight-box {
+      background: linear-gradient(135deg, #f0faf4, #e6f5ee);
+      border: 1.5px solid #b8dfc6;
+      border-radius: 12px;
+      padding: 22px;
+      margin-bottom: 20px;
+    }
+
+    .highlight-box .hb-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      color: #2a9d5c;
+      margin-bottom: 8px;
+    }
+
+    .highlight-box .hb-title {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 18px;
+      color: #1a4a28;
+      margin-bottom: 8px;
+    }
+
+    .highlight-box p {
+      font-size: 13px;
+      color: #4d7a5a;
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    .highlight-box .date-badge {
+      display: inline-block;
+      background: #1a6e3c;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+    }
+
+    /* ── CTA BUTTON ── */
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 600;
+      padding: 11px 22px;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+
+    .btn-primary {
+      background: #1a6e3c;
+      color: #ffffff;
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: #1a6e3c;
+      border: 1.5px solid #2a9d5c;
+      margin-left: 10px;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    /* ── ASESOR ── */
+    .advisor-strip {
+      background: #f4faf6;
+      border: 1px solid #dceee3;
+      border-radius: 10px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .advisor-avatar {
+      width: 40px;
+      height: 40px;
+      background: #c8ecd8;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 18px;
+    }
+
+    .advisor-strip p {
+      font-size: 13px;
+      color: #4d6352;
+      line-height: 1.55;
+    }
+
+    .advisor-strip p a {
+      color: #1a6e3c;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1px solid #e6ede8;
+      margin: 28px 0;
+    }
+
+    /* ── SIGNATURE ── */
+    .signature {
+      text-align: center;
+      padding-bottom: 8px;
+    }
+
+    .signature p {
+      font-size: 14px;
+      color: #4d6352;
+      line-height: 1.65;
+    }
+
+    .signature .sig-name {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 17px;
+      color: #1a4a28;
+      margin-top: 6px;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: #1a3d24;
+      padding: 24px 40px;
+      text-align: center;
+    }
+
+    .footer p {
+      font-size: 11.5px;
+      color: #7aaa8a;
+      line-height: 1.7;
+    }
+
+    .footer a {
+      color: #5dc883;
+      text-decoration: none;
+    }
+
+    .footer .footer-links {
+      margin-bottom: 10px;
+    }
+
+    .footer .footer-links a {
+      font-size: 12px;
+      font-weight: 500;
+      margin: 0 8px;
+    }
+
+    .footer-sep {
+      color: #3a6044;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 480px) {
+      .header { padding: 28px 24px 24px; }
+      .body-content { padding: 28px 24px; }
+      .progress-section { padding: 16px 24px; }
+      .footer { padding: 20px 24px; }
+      .header h1 { font-size: 22px; }
+      .btn-row { flex-direction: column; }
+      .btn-secondary { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="email-wrapper">
+  <table class="email-container" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+
+    <!-- ══ HEADER ══ -->
+    <tr>
+      <td class="header">
+        <div class="header-logo">
+          <span>Parque <em>Salud</em></span>
+        </div>
+        <br/>
+        <div class="header-badge">
+          <span>✦ Afiliación en curso</span>
+        </div>
+        <h1>¡Gracias por elegirnos,<br/>Gabriel! 🙌</h1>
+        <p class="subtitle">Tu afiliación ya se encuentra en su etapa final.</p>
+      </td>
+    </tr>
+
+    <!-- ══ PROGRESS ══ -->
+    <tr>
+      <td class="progress-section">
+        <p class="progress-label">Progreso del trámite</p>
+        <div class="progress-track">
+          <div class="progress-fill"></div>
+        </div>
+        <div class="progress-steps">
+          <span class="active">✓ Datos cargados</span>
+          <span class="active">✓ Confirmado</span>
+          <span class="active">→ Traspaso</span>
+          <span>Cobertura activa</span>
+        </div>
+      </td>
+    </tr>
+
+    <!-- ══ BODY ══ -->
+    <tr>
+      <td class="body-content">
+
+        <p class="greeting">Hola, <strong>Gabriel</strong></p>
+        <p class="intro-text">
+          A continuación te presentamos los datos y términos y condiciones que aceptaste durante el proceso de afiliación.
+        </p>
+
+        <!-- Card: Documentación -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">
+              <!-- File icon -->
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <span class="card-title">Datos de tu afiliación</span>
+          </div>
+        
+            <div class="card-body">
+              <p><strong>Apellido y Nombre:</strong> Diaz Heredia Gabriel</p>
+              <p><strong>DNI:</strong> 34111222</p>
+              <p><strong>CUIL:</strong> 20-34111222-4</p>
+              <p><strong>Fecha de Nacimiento:</strong> 16/10/1989</p>
+                <p><strong>Teléfono:</strong> (351) 2295888</p>
+                <p><strong>Domicilio:</strong> Cabrera 850 - Córdoba<
+                <p><strong>Email:</strong> gdiazheredia.psalud@gmail.com</p>
+        
+                <hr>
+
+                <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="margin-bottom: 10px;">
+                    <tr>
+                    <!-- Columna izquierda: Plan -->
+                        <td width="50%" valign="top" style="padding-right: 10px;">
+                            <p style="font-size:12px; color:#1a4a28; font-weight:600; margin-bottom:8px;">Plan</p>
+      
+                            <p><strong>Plan:</strong>  D2100</p>
+                            <p><strong>Costo:</strong>   105.603</p>
+                            <p><strong>Aporte:</strong>   100.000</p>
+                            <p><strong>Cuota inicial:</strong>   5.603 </p>
+                            <p><strong>A pagar:</strong>   0 </p>
+                            <p><strong>Promoción:</strong>   40% de descuento</p>
+                            <p><strong>Duración:</strong>   12 meses </p>
+                        </td>
+
+                      <!-- Columna derecha: Pago -->
+                        <td width="50%" valign="top" style="padding-left: 10px;">
+                            <p style="font-size:12px; color:#1a4a28; font-weight:600; margin-bottom:8px;">Forma de pago</p>
+                            <p><strong>CBU:</strong> 0721000005123451234522 </p>
+                            <p><strong>N° Tarjeta:</strong> </p>
+                        </td>
+                   </tr>
+                </table>
+
+            <hr>   
+            </div>
+        <div class="card-header">
+            <div class="card-icon">
+              <!-- File icon -->
+              <svg viewBox="0 0 24 24"><a href="#"></a><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <span class="card-title">Ver reglamento</span>
+          </div>
+        </div>
+
+        <!-- Alert: modificación de datos -->
+        <div class="alert-box">
+          <span class="alert-icon">⏱</span>
+          <p>
+            Si bien tu trámite ya está confirmado, disponés de un plazo de <strong>24 horas</strong> para solicitar la modificación de algún dato brindado. Para hacerlo, enviá un correo a
+            <a href="mailto:actualizardatos@parquesalud.com.ar?subject=Modificación%20de%20datos%20-%20Afiliación&body=Hola%2C%20necesito%20modificar%20los%20siguientes%20datos%20de%20mi%20afiliación%3A">actualizardatos@parquesalud.com.ar</a>.
+          </p>
+        </div>
+
+        <hr class="divider"/>
+
+        <!-- Highlight: traspaso -->
+        <div class="highlight-box">
+          <p class="hb-label">Último paso</p>
+          <p class="hb-title">Activá tu cobertura</p>
+          <p>
+            Para completar el proceso y habilitar tu cobertura, es necesario que realices el trámite de traspaso de obra social en la página de la
+            <strong><a href="https://www.sssalud.gob.ar/misssalud/" target="_blank" rel="noopener noreferrer"> Superintendencia de Servicios de Salud</a></strong>. 
+            La cobertura quedará vigente una vez recibido y validado el formulario.
+          </p>
+          
+          <!-- Card: traspaso links -->
+          <div class="card" style="margin-bottom: 2px;">
+            <div class="card-body">
+              <div class="link-row">
+                <span class="link-tag"></a></span>
+              </div>
+              <div class="link-row">
+                <span class="link-tag"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="btn-row">
+            <a href="#" class="btn btn-secondary">📄 Ver instructivo</a>
+            <a href="#" class="btn btn-primary">📤 Subir formulario</a>
+          </div>
+        </div>
+
+        <!-- Advisor strip -->
+        <div class="advisor-strip">
+          <div class="advisor-avatar">👤</div>
+          <p>
+            ¿Preferís ayuda personalizada? Podés <a href="#">solicitar que un asesor te acompañe</a> durante el traspaso. <strong>Estamos para ayudarte.</strong>
+          </p>
+        </div>
+
+        <hr class="divider"/>
+
+        <!-- Signature -->
+        <div class="signature">
+          <p>Ante cualquier duda, no dudes en contactarnos.</p>
+          <p>Gracias por confiar en nosotros. Saludos cordiales,</p>
+          <p class="sig-name">Parque Salud</p>
+        </div>
+
+      </td>
+    </tr>
+
+    <!-- ══ FOOTER ══ -->
+    <tr>
+      <td class="footer">
+        <div class="footer-links">
+          <a href="#">Centro de Ayuda</a>
+          <span class="footer-sep">|</span>
+          <a href="#">Política de Privacidad</a>
+          <span class="footer-sep">|</span>
+          <a href="#">Términos y Condiciones</a>
+        </div>
+        <p>Este correo fue enviado por Parque Salud a <strong style="color:#aad4b8;">gabriel@email.com</strong></p>
+        <p style="margin-top:6px;">© 2025 Parque Salud. Todos los derechos reservados.</p>
+      </td>
+    </tr>
+
+  </table>
+</div>
+
+</body>
+</html>
